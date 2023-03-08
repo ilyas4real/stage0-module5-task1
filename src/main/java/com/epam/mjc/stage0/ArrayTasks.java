@@ -27,8 +27,8 @@ public class ArrayTasks {
      */
     public int[] generateNumbers(int length) {
         int[] arr = new int[length];
-        for (int i = 1; i <= length; i++) {
-            arr[i] = i;
+        for (int i = 0; i < length; i++) {
+            arr[i] = i+1;
         }
         return arr;
     }
@@ -59,13 +59,12 @@ public class ArrayTasks {
      * arr = [5, -3, -4],   number = 10    ->  -1
      */
     public int findIndexOfNumber(int[] arr, int number) {
-        int index = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == number) {
-                index = i;
+                return i;
             }
         }
-        return index;
+        return -1;
 
     }
 
@@ -80,10 +79,8 @@ public class ArrayTasks {
      */
     public String[] reverseArray(String[] arr) {
         String[] reversed = new String[arr.length];
-        for (int i = arr.length -1; i > -1; i--) {
-            for (int j = 0; j < arr.length; j++) {
+        for (int i = arr.length - 1, j = 0; i >= 0; i--, j++) {
                 reversed[j]  = arr[i];
-            }
         }
         return reversed;
     }
